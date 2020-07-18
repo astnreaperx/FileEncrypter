@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FileEncrypter.exe" size="22960">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="FileEncrypter.exe" size="757168">
       <assemblyIdentity name="FileEncrypter" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Jj1QZ22OVwNfgYHD6feNJGcXKcE5XcjZ20TULJTwlo4=</dsig:DigestValue>
+        <dsig:DigestValue>tuyBsQVqoB5sjzpkMyG0K925lISddEQzgElSBOmVQRI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

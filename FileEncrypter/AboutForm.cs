@@ -20,6 +20,13 @@ namespace FileEncrypter
         private void tsiExit_Click(object sender, EventArgs e)
         {
             this.Close();
+
+        }
+
+        private void AboutForm_Load(object sender, EventArgs e)
+        {
+            txtDescription.Text = "This is a Encryption program";
+                
         }
     }
 }

@@ -39,6 +39,21 @@ namespace FileEncrypter
             tsiEncrypt.Enabled = false;
         }
 
+        private void FileEncrypterForm_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+
+        private void FileEncrypterForm_Shown(object sender, EventArgs e)
+        {
+            string welcomeText = "  If you have not generated a key, make sure to go to the \"Encryption\" tab and hit the \"Generate Key\" button. You can save this file to anywhere you want, make sure to keep it in a secure location " +
+                "\n\n   To encrypt a file, load your key from the encryption tab, and select the key you encrypted the file with. Then, you can encrypt your file by clicking the \"Encrypt\" button from the encryption tab." +
+                "\n\n   To decrypt a file, load your key from the encryption tab, and select the key you encrypted the file with. You can decrypt the file by clicking the \"Decrypt\" button from the encryption tab.";
+
+            MessageBox.Show(welcomeText, "Honk !!!", MessageBoxButtons.OK);
+        }
+
         /// <summary>
         /// Tool strip Exit click event, closes the form
         /// </summary>
@@ -56,7 +71,8 @@ namespace FileEncrypter
         /// <param name="e"></param>
         private void tsiLoad_Click(object sender, EventArgs e)
         {
-            LoadText(); 
+            LoadText();
+
         }
 
         /// <summary>
@@ -180,7 +196,7 @@ namespace FileEncrypter
                 fsCrypt.Close();
 
                 // Remove password from memory(RAM)
-                ZeroMemory(gch.AddrOfPinnedObject(), password.Length * 2);
+                 ZeroMemory(gch.AddrOfPinnedObject(), password.Length * 2);
                 gch.Free();
             }
             else
@@ -274,6 +290,9 @@ namespace FileEncrypter
         public void SaveText()
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            saveFileDialog.FilterIndex = 2;
+            saveFileDialog.RestoreDirectory = true;
 
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -350,6 +369,10 @@ namespace FileEncrypter
             return data;
         }
 
-
+        private void helpToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            HelpForm helpForm = new HelpForm();
+            helpForm.Show();
+        }
     }
 }

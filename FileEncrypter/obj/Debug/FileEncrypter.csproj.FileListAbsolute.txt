@@ -14,3 +14,4 @@ C:\Users\WorkHorse\Documents\@Austin_Documnents\Personal\Coding\C#\FileEncrypter
 C:\Users\WorkHorse\Documents\@Austin_Documnents\Personal\Coding\C#\FileEncrypter\FileEncrypter\FileEncrypter\obj\Debug\FileEncrypter.csprojAssemblyReference.cache
 C:\Users\WorkHorse\Documents\@Austin_Documnents\Personal\Coding\C#\FileEncrypter\FileEncrypter\FileEncrypter\obj\Debug\FileEncrypter.GenerateKeyForm.resources
 C:\Users\WorkHorse\Documents\@Austin_Documnents\Personal\Coding\C#\FileEncrypter\FileEncrypter\FileEncrypter\obj\Debug\FileEncrypter.AboutForm.resources
+C:\Users\WorkHorse\Documents\@Austin_Documnents\Personal\Coding\C#\FileEncrypter\FileEncrypter\FileEncrypter\obj\Debug\FileEncrypter.HelpForm.resources

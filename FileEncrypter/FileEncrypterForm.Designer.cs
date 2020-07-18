@@ -31,7 +31,6 @@
             this.txbText = new System.Windows.Forms.TextBox();
             this.mnsMain = new System.Windows.Forms.MenuStrip();
             this.tsiFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiNew = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiLoad = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiSave = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
@@ -39,17 +38,18 @@
             this.encryptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiEncrypt = new System.Windows.Forms.ToolStripMenuItem();
             this.tsiDecrypt = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsiLoadKey = new System.Windows.Forms.ToolStripMenuItem();
             this.generateKeyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsiAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lblKey = new System.Windows.Forms.Label();
             this.lblValue = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblNameValue = new System.Windows.Forms.Label();
             this.grbKeyInfo = new System.Windows.Forms.GroupBox();
             this.lblTextEditorTitle = new System.Windows.Forms.Label();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tsiAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnsMain.SuspendLayout();
             this.grbKeyInfo.SuspendLayout();
             this.SuspendLayout();
@@ -79,7 +79,6 @@
             // tsiFile
             // 
             this.tsiFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiNew,
             this.tsiLoad,
             this.tsiSave,
             this.toolStripMenuItem1,
@@ -88,35 +87,29 @@
             this.tsiFile.Size = new System.Drawing.Size(44, 24);
             this.tsiFile.Text = "&File";
             // 
-            // tsiNew
-            // 
-            this.tsiNew.Name = "tsiNew";
-            this.tsiNew.Size = new System.Drawing.Size(216, 26);
-            this.tsiNew.Text = "&New";
-            // 
             // tsiLoad
             // 
             this.tsiLoad.Name = "tsiLoad";
-            this.tsiLoad.Size = new System.Drawing.Size(216, 26);
+            this.tsiLoad.Size = new System.Drawing.Size(144, 26);
             this.tsiLoad.Text = "&Load";
             this.tsiLoad.Click += new System.EventHandler(this.tsiLoad_Click);
             // 
             // tsiSave
             // 
             this.tsiSave.Name = "tsiSave";
-            this.tsiSave.Size = new System.Drawing.Size(216, 26);
-            this.tsiSave.Text = "&Save";
+            this.tsiSave.Size = new System.Drawing.Size(144, 26);
+            this.tsiSave.Text = "&Save As...";
             this.tsiSave.Click += new System.EventHandler(this.tsiSave_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(213, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(141, 6);
             // 
             // tsiExit
             // 
             this.tsiExit.Name = "tsiExit";
-            this.tsiExit.Size = new System.Drawing.Size(216, 26);
+            this.tsiExit.Size = new System.Drawing.Size(144, 26);
             this.tsiExit.Text = "&Exit";
             this.tsiExit.Click += new System.EventHandler(this.tsiExit_Click);
             // 
@@ -135,30 +128,58 @@
             // tsiEncrypt
             // 
             this.tsiEncrypt.Name = "tsiEncrypt";
-            this.tsiEncrypt.Size = new System.Drawing.Size(216, 26);
+            this.tsiEncrypt.Size = new System.Drawing.Size(172, 26);
             this.tsiEncrypt.Text = "&Encrypt";
             this.tsiEncrypt.Click += new System.EventHandler(this.tsiEncrypt_Click);
             // 
             // tsiDecrypt
             // 
             this.tsiDecrypt.Name = "tsiDecrypt";
-            this.tsiDecrypt.Size = new System.Drawing.Size(216, 26);
+            this.tsiDecrypt.Size = new System.Drawing.Size(172, 26);
             this.tsiDecrypt.Text = "&Decrypt";
             this.tsiDecrypt.Click += new System.EventHandler(this.tsiDecrypt_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(169, 6);
             // 
             // tsiLoadKey
             // 
             this.tsiLoadKey.Name = "tsiLoadKey";
-            this.tsiLoadKey.Size = new System.Drawing.Size(216, 26);
+            this.tsiLoadKey.Size = new System.Drawing.Size(172, 26);
             this.tsiLoadKey.Text = "&Load Key";
             this.tsiLoadKey.Click += new System.EventHandler(this.tsiLoadKey_Click);
             // 
             // generateKeyToolStripMenuItem
             // 
             this.generateKeyToolStripMenuItem.Name = "generateKeyToolStripMenuItem";
-            this.generateKeyToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.generateKeyToolStripMenuItem.Size = new System.Drawing.Size(172, 26);
             this.generateKeyToolStripMenuItem.Text = "&Generate Key";
             this.generateKeyToolStripMenuItem.Click += new System.EventHandler(this.generateKeyToolStripMenuItem_Click);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsiAbout,
+            this.helpToolStripMenuItem1});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // tsiAbout
+            // 
+            this.tsiAbout.Name = "tsiAbout";
+            this.tsiAbout.Size = new System.Drawing.Size(216, 26);
+            this.tsiAbout.Text = "&About";
+            this.tsiAbout.Click += new System.EventHandler(this.tsiAbout_Click);
+            // 
+            // helpToolStripMenuItem1
+            // 
+            this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
+            this.helpToolStripMenuItem1.Size = new System.Drawing.Size(216, 26);
+            this.helpToolStripMenuItem1.Text = "&Help";
+            this.helpToolStripMenuItem1.Click += new System.EventHandler(this.helpToolStripMenuItem1_Click);
             // 
             // lblKey
             // 
@@ -215,32 +236,12 @@
             // 
             this.lblTextEditorTitle.AutoSize = true;
             this.lblTextEditorTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTextEditorTitle.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblTextEditorTitle.Location = new System.Drawing.Point(8, 47);
+            this.lblTextEditorTitle.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lblTextEditorTitle.Location = new System.Drawing.Point(17, 47);
             this.lblTextEditorTitle.Name = "lblTextEditorTitle";
-            this.lblTextEditorTitle.Size = new System.Drawing.Size(101, 24);
+            this.lblTextEditorTitle.Size = new System.Drawing.Size(120, 24);
             this.lblTextEditorTitle.TabIndex = 10;
-            this.lblTextEditorTitle.Text = "Text Editor";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(213, 6);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsiAbout});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
-            // tsiAbout
-            // 
-            this.tsiAbout.Name = "tsiAbout";
-            this.tsiAbout.Size = new System.Drawing.Size(216, 26);
-            this.tsiAbout.Text = "About";
-            this.tsiAbout.Click += new System.EventHandler(this.tsiAbout_Click);
+            this.lblTextEditorTitle.Text = "Goose Editor";
             // 
             // FileEncrypterForm
             // 
@@ -252,7 +253,9 @@
             this.Controls.Add(this.txbText);
             this.Controls.Add(this.mnsMain);
             this.Name = "FileEncrypterForm";
-            this.Text = "File Encrypt";
+            this.Text = "Goose Encrypt";
+            this.Load += new System.EventHandler(this.FileEncrypterForm_Load);
+            this.Shown += new System.EventHandler(this.FileEncrypterForm_Shown);
             this.mnsMain.ResumeLayout(false);
             this.mnsMain.PerformLayout();
             this.grbKeyInfo.ResumeLayout(false);
@@ -265,12 +268,6 @@
         #endregion
         private System.Windows.Forms.TextBox txbText;
         private System.Windows.Forms.MenuStrip mnsMain;
-        private System.Windows.Forms.ToolStripMenuItem tsiFile;
-        private System.Windows.Forms.ToolStripMenuItem tsiNew;
-        private System.Windows.Forms.ToolStripMenuItem tsiLoad;
-        private System.Windows.Forms.ToolStripMenuItem tsiSave;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem tsiExit;
         private System.Windows.Forms.ToolStripMenuItem encryptionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsiEncrypt;
         private System.Windows.Forms.ToolStripMenuItem tsiDecrypt;
@@ -285,6 +282,12 @@
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsiAbout;
+        private System.Windows.Forms.ToolStripMenuItem tsiFile;
+        private System.Windows.Forms.ToolStripMenuItem tsiLoad;
+        private System.Windows.Forms.ToolStripMenuItem tsiSave;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tsiExit;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem1;
     }
 }
 
