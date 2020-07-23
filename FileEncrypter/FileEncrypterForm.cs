@@ -39,12 +39,22 @@ namespace FileEncrypter
             tsiEncrypt.Enabled = false;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FileEncrypterForm_Load(object sender, EventArgs e)
         {
-            
+
+
         }
 
-
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FileEncrypterForm_Shown(object sender, EventArgs e)
         {
             string welcomeText = "  If you have not generated a key, make sure to go to the \"Encryption\" tab and hit the \"Generate Key\" button. You can save this file to anywhere you want, make sure to keep it in a secure location " +

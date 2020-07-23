@@ -33,22 +33,25 @@ namespace FileEncrypter
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
+            //Split a string to arrays
             string[] words = txtSearch.Text.Split(',');
             foreach (string word in words)
             {
-                int startindex = 0;
-                while (startindex < richTextBox1.TextLength)
+                int startIndex = 0;
+                while (startIndex < richTextBox1.TextLength)
                 {
-                    int wordstartIndex = richTextBox1.Find(word, startindex, RichTextBoxFinds.None);
-                    if (wordstartIndex != -1)
+                    //Find word & return index
+                    int wordStartIndex = richTextBox1.Find(word, startIndex, RichTextBoxFinds.None);
+                    if (wordStartIndex != -1)
                     {
-                        richTextBox1.SelectionStart = wordstartIndex;
+                        //Highlight text in a richtextbox
+                        richTextBox1.SelectionStart = wordStartIndex;
                         richTextBox1.SelectionLength = word.Length;
-                        richTextBox1.SelectionBackColor = Color.GreenYellow;
+                        richTextBox1.SelectionBackColor = Color.Yellow;
                     }
                     else
                         break;
-                    startindex += wordstartIndex + word.Length;
+                    startIndex += wordStartIndex + word.Length;
                 }
             }
         }
@@ -59,5 +62,6 @@ namespace FileEncrypter
             richTextBox1.SelectAll();
             richTextBox1.SelectionBackColor = Color.White;  
         }
+
     }
 }

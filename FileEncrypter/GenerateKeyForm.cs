@@ -68,7 +68,11 @@ namespace FileEncrypter
             if (errorflag == false)
             {
                 // Open a save file dialog box to select the path
+                // Would like to save a PKF
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
+                saveFileDialog.Filter = "MyKey|*.pkf";
+
+
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     // Get the path of the file you want to save 
@@ -81,6 +85,7 @@ namespace FileEncrypter
                         XmlSerializer serializer = new XmlSerializer(typeof(EncryptionKey));
                         serializer.Serialize(stream, encryptionKey);
                         stream.Close();
+                        this.Close();
                     }
                 }
                 else
