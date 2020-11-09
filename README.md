@@ -20,4 +20,4 @@ Project is created with:
 * Geese
 	
 ## Setup
-donwload the open source code and comiple yourself
+donwload the open source code and compile yourself
