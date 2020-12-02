@@ -1,4 +1,4 @@
-#Goose Encrypt V1
+#Goose Encrypt V1.02
 
 ## Table of contents
 * [Mission](#mission)
