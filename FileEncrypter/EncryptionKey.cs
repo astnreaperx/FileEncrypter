@@ -16,17 +16,19 @@ namespace FileEncrypter
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Key { get; set; }
+        public string Password { get; set; }
 
         public EncryptionKey()
         {
 
         }
 
-        public EncryptionKey( string FirstName , string LastName, string Key)
+        public EncryptionKey( string FirstName , string LastName, string Key, string Password)
         {
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.Key = Key;
+            this.Password = Password;
         }
 
         public void GetObjectData(SerializationInfo info, StreamingContext context)
@@ -34,7 +36,7 @@ namespace FileEncrypter
             info.AddValue("FirstName", FirstName);
             info.AddValue("LastName", LastName);
             info.AddValue("Key", Key);
-
+            info.AddValue("Password", Password);
         }
 
         public EncryptionKey(SerializationInfo info, StreamingContext context)
@@ -42,7 +44,7 @@ namespace FileEncrypter
             FirstName = (string)info.GetValue("FirstName", typeof(string));
             LastName = (string)info.GetValue("LastName", typeof(string));
             Key = (string)info.GetValue("Key", typeof(string));
-
+            Password = (string)info.GetValue("Password", typeof(string));
         }
     }
 }

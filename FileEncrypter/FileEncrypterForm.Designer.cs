@@ -272,7 +272,6 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FileEncrypterForm";
             this.Text = "Goose Encrypt";
-            this.Load += new System.EventHandler(this.FileEncrypterForm_Load);
             this.Shown += new System.EventHandler(this.FileEncrypterForm_Shown);
             this.mnsMain.ResumeLayout(false);
             this.mnsMain.PerformLayout();

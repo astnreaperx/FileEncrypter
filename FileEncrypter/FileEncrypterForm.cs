@@ -44,17 +44,6 @@ namespace FileEncrypter
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FileEncrypterForm_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void FileEncrypterForm_Shown(object sender, EventArgs e)
         {
             string welcomeText = "  If you have not generated a key, make sure to go to the \"Encryption\" tab and hit the \"Generate Key\" button. You can save this file to anywhere you want, make sure to keep it in a secure location " +
@@ -316,8 +305,7 @@ namespace FileEncrypter
                 return;
             }
         }
-
-
+    
         /// <summary>
         /// De-serialize XML
         /// I.E load the key into the application
@@ -338,6 +326,8 @@ namespace FileEncrypter
                     try
                     {
                         tempObj = (EncryptionKey)deserializer.Deserialize(fileStream);
+                        LoginForm login = new LoginForm(tempObj);
+                        login.Show();
                     }
                     catch(Exception e)
                     {
@@ -345,12 +335,6 @@ namespace FileEncrypter
                         return;
                     }
                     fileStream.Close();
-
-                    lblNameValue.Text = tempObj.FirstName + " " + tempObj.LastName;
-                    lblValue.Text = tempObj.Key;
-                    tsiDecrypt.Enabled = true;
-                    tsiEncrypt.Enabled = true;
-
                 }
             }
             else
@@ -359,6 +343,18 @@ namespace FileEncrypter
             }
         }
 
+        /// <summary>
+        /// Loads the key info
+        /// Is called from the Login Form
+        /// </summary>
+        /// <param name="myKey"></param>
+        public void LoadKeyInfo(EncryptionKey myKey)
+        {
+            lblNameValue.Text = myKey.FirstName + " " + myKey.LastName;
+            lblValue.Text = myKey.Key;
+            tsiDecrypt.Enabled = true;
+            tsiEncrypt.Enabled = true;
+        }
 
         /// <summary>
         /// Generate Random Salt for Encryption

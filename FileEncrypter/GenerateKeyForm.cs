@@ -32,7 +32,9 @@ namespace FileEncrypter
             errorProvider.Clear();
             txbFirstName.Text = string.Empty;
             txbLastName.Text = string.Empty;
-            txbPassword.Text = string.Empty;
+            txbPassphrase.Text = string.Empty;
+            txbUserPassword.Text = string.Empty;
+            txbUserPasswordTwo.Text = string.Empty;
         }
 
         private void btnGenerate_Click(object sender, EventArgs e)
@@ -58,9 +60,15 @@ namespace FileEncrypter
                 errorProvider.SetError(txbLastName, "Please Enter a Last Name!");
                 errorflag = true;
             }
-            if(txbPassword.Text == string.Empty) // Checks to see if the Password textbox is empty
+            if(txbPassphrase.Text == string.Empty) // Checks to see if the Password textbox is empty
             {
-                errorProvider.SetError(txbPassword, "Please Enter a Password!");
+                errorProvider.SetError(txbPassphrase, "Please Enter a Password!");
+                errorflag = true;
+            }
+            if (txbUserPassword.Text != txbUserPasswordTwo.Text) // Checks to see if the Passwords Match
+            {
+                errorProvider.SetError(txbUserPassword, "Passwords did not match!");
+                errorProvider.SetError(txbUserPasswordTwo, "Passwords did not match!");
                 errorflag = true;
             }
 
@@ -102,8 +110,8 @@ namespace FileEncrypter
         private EncryptionKey GenerateKey()
         {
             // Compute the Hash based on the users Password
-            string key = ComputeSha256Hash(txbPassword.Text);
-            EncryptionKey NewKey = new EncryptionKey(txbFirstName.Text,txbLastName.Text,key);
+            string key = ComputeSha256Hash(txbPassphrase.Text);
+            EncryptionKey NewKey = new EncryptionKey(txbFirstName.Text,txbLastName.Text,key ,txbUserPassword.Text);
             return NewKey;
         }
 
